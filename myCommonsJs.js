@@ -20,25 +20,29 @@ function addWarningBtn(field, title = "Click to fix value", icon = "glyphicon gl
 
 function ToggleFix(field, a = 'default') {
 
-    if (!$j('#' + field).next().children('.btn-fix').hasClass('btn-' + a)) {
+    //TODO: fix this code
+
+    $field = $j('#' + field);
+
+    if (!$field.next().children('.btn-fix').hasClass('btn-' + a)) {
 
         if (a === 'default') {
-            $j('#' + field).next().children('.btn-fix').removeClass('btn-warning btn-danger');
-            $j('#' + field).next().children('.btn-fix').children().removeClass('glyphicon-warning-sign glyphicon-remove ');
-            $j('#' + field).next().children('.btn-fix').children().toggleClass('glyphicon-ok');
-            $j('#' + field).parents('.form-group').removeClass('has-error');
+            $field.next().children('.btn-fix').removeClass('btn-warning btn-danger');
+            $field.next().children('.btn-fix').children().removeClass('glyphicon-warning-sign glyphicon-remove ');
+            $field.next().children('.btn-fix').children().toggleClass('glyphicon-ok');
+            $field.parents('.form-group').removeClass('has-error');
         };
         if (a === 'warning') {
-            $j('#' + field).next().children('.btn-fix').children().toggleClass('glyphicon-warning-sign');
-            $j('#' + field).next().children('.btn-fix').removeClass('btn-default');
-            $j('#' + field).next().children('.btn-fix').children().removeClass('glyphicon-ok');
+            $field.next().children('.btn-fix').children().toggleClass('glyphicon-warning-sign');
+            $field.next().children('.btn-fix').removeClass('btn-default');
+            $field.next().children('.btn-fix').children().removeClass('glyphicon-ok');
         };
         if (a === 'danger') {
-            $j('#' + field).next().children('.btn-fix').children().toggleClass('glyphicon-remove');
-            $j('#' + field).next().children('.btn-fix').removeClass('btn-default');
-            $j('#' + field).next().children('.btn-fix').children().removeClass('glyphicon-ok');
+            $field.next().children('.btn-fix').children().toggleClass('glyphicon-remove');
+            $field.next().children('.btn-fix').removeClass('btn-default');
+            $field.next().children('.btn-fix').children().removeClass('glyphicon-ok');
         };
-        $j('#' + field).next().children('.btn-fix').toggleClass('btn-' + a);
+        $field.next().children('.btn-fix').toggleClass('btn-' + a);
     }
 }
 
